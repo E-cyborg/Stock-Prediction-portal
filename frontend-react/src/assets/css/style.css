@@ -1,4 +1,7 @@
-body {
+body{
+    background-color: rgb(61, 61, 61);
+}
+* {
       margin: 0;
       padding: 0; /* optional: also reset padding */
       box-sizing: border-box; /* recommended for layout control */
