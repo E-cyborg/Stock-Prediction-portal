@@ -32,6 +32,8 @@ INSTALLED_APPS = [
 
 USER_INSTALL_APPS=[
     'rest_framework',
+    'accounts',
+    'api',
 ]
 INSTALLED_APPS+=USER_INSTALL_APPS
 
