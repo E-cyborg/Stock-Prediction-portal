@@ -1,6 +1,28 @@
-body{
-    background-color: rgb(61, 61, 61);
+/* body{
+  background-image: url("/main.png");
+  background-color: rgba(255, 255, 255, 0.189);
+  
+} */
+
+
+body {
+  background: linear-gradient(rgba(120, 116, 116, 0.622), rgba(255, 255, 255, 0)),
+              url('main.png');
+  background-size: cover;
+  background-position: center;
 }
+
+
+/* background-color: rgb(61, 61, 61); */
+
+
+/* body::after{
+  background: rgba(0, 0, 0, 0.1); */
+/* } */
+
+
+
+
 * {
       margin: 0;
       padding: 0; /* optional: also reset padding */

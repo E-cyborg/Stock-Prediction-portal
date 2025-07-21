@@ -3,3 +3,7 @@ body {
       padding: 0; /* optional: also reset padding */
       box-sizing: border-box; /* recommended for layout control */
     }
+.custom-card-dark {
+background-color: #212529 !important;
+color: #fff;
+}

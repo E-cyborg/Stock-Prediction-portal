@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <>
@@ -13,7 +13,7 @@ const Header = () => {
 
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">Stock Prediction</a>
+          <Link className="navbar-brand" to="/">Stock Prediction</Link>
           
           <button
             className="navbar-toggler"
@@ -30,8 +30,8 @@ const Header = () => {
           {/* This wrapper is required for toggle to work */}
           <div className="collapse navbar-collapse justify-content-end" id="navbarContent">
             <div className="d-flex gap-2">
-              <button className="btn btn-outline-light" type="button">Login</button>
-              <button className="btn btn-info custom-shadow" type="button">Sign In</button>
+              <Link to='/login' className="btn btn-outline-light" type="button">Login</Link>
+              <Link to='/register' className="btn btn-info custom-shadow" type="button">Sign In</Link>
             </div>
           </div>
         </div>

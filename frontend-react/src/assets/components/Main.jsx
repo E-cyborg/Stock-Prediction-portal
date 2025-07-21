@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 const Main = () => {
   return (
     <>
@@ -9,7 +9,7 @@ const Main = () => {
           <p style={{ color: 'gray' }}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur sequi libero quasi ipsum ab obcaecati alias sint odio. Alias non consequuntur aperiam doloremque quos numquam quae itaque. Maxime, modi ad.
           </p>
-          <button className="btn btn-info" type="button">Login</button>
+          <Link to='/login' className="btn btn-info" type="button">Login</Link>
         </div>
       </div>
     </>
