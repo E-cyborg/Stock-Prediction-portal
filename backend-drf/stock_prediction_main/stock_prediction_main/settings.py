@@ -35,6 +35,7 @@ USER_INSTALL_APPS=[
     'accounts',
     'api',
     'corsheaders',
+    'rest_framework_simplejwt',
 ]
 INSTALLED_APPS+=USER_INSTALL_APPS
 
@@ -109,3 +110,11 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
 ]
 CORS_ALLOW_ALL_ORIGINS = True
+
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}

@@ -1,6 +1,17 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, Navigate } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider';
+// import { useContext } from 'react';
+
 const Header = () => {
+  const {isLogedin,setLogedIn} =useContext(AuthContext)
+  const handleLogout=()=>{
+    localStorage.removeItem('accessToken')
+    localStorage.removeItem('refreshToken')
+    // isLogedin
+    setLogedIn(false)
+    Navigate('/login')
+  }
   return (
     <>
       <style>
@@ -26,14 +37,19 @@ const Header = () => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
+          {isLogedin ? (
+              <button onClick={handleLogout} className="btn btn-danger">Logout</button>
+            ) : (
+              <div className="collapse navbar-collapse justify-content-end" id="navbarContent">
+                <div className="d-flex gap-2">
+                  <Link to='/login' className="btn btn-outline-light" type="button">Login</Link>
+                  <Link to='/register' className="btn btn-info custom-shadow" type="button">Sign In</Link>
+                </div>
+              </div>
+            )}
 
-          {/* This wrapper is required for toggle to work */}
-          <div className="collapse navbar-collapse justify-content-end" id="navbarContent">
-            <div className="d-flex gap-2">
-              <Link to='/login' className="btn btn-outline-light" type="button">Login</Link>
-              <Link to='/register' className="btn btn-info custom-shadow" type="button">Sign In</Link>
-            </div>
-          </div>
+
+          
         </div>
       </nav>
     </>

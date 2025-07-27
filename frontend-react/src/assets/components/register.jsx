@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState,useEffect,useContext } from 'react';
+import { Link, navigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Register = () => {
@@ -9,6 +9,13 @@ const Register = () => {
   const [errors,setError] = useState({});
   const [success, setSuccess] =useState(false);
   const [loading, setloading] =useState(false);
+  const {isLogedin,setLogedIn} =useContext(AuthContext)
+
+  useEffect(() => {
+  if (isLogedin) {
+    navigate('/'); // lowercase "navigate", not "Navigate"
+  }
+}, [isLogedin]); // Watch for changes to isLogedin
 
   const handleRegistration = async (e) => {
     e.preventDefault();
@@ -21,6 +28,7 @@ const Register = () => {
       console.log('Response data:', response.data);
       console.log('Registration successful');
       setSuccess(true)
+      
 
     }
     catch (error) {
