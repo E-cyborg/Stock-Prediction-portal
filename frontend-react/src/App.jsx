@@ -8,8 +8,9 @@ import {BrowserRouter,Routes,Route} from "react-router-dom";
 import Register from './assets/components/register'
 import Login from './assets/components/Login'
 import AuthProvider from './AuthProvider'
-
-
+import Dashboard from './assets/components/dashboard/Dashboard'
+import PrivateRoute from './PrivateRoute'
+import PublicRoute from './PublicRoute'
 
 function App() {
 
@@ -20,8 +21,9 @@ function App() {
             < Header/>
               <Routes>
                 <Route path='/' element={<Main/>}/>
-                <Route path='/register'element={<Register />}/>
-                <Route path='/login'element={<Login />}/>
+                <Route path='/register'element={<PublicRoute><Register /></PublicRoute>}/>
+                <Route path='/login'element={<PublicRoute><Login /></PublicRoute>}/>
+                <Route path='/dashbord'element={<PrivateRoute><Dashboard/></PrivateRoute>}/>
               </Routes>
             <Footer />
         </BrowserRouter>
